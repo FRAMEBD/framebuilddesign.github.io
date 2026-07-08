@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frame Build & Design — Free Consultation · Newport Beach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --sand:     #F5EFE6;
+  --linen:    #EDE4D6;
+  --clay:     #C8855A;
+  --clay-dk:  #A8623A;
+  --stone:    #7C6B58;
+  --wood:     #5C4A37;
+  --bark:     #3D2E1F;
+  --cream:    #FBF7F2;
+  --sage:     #8A9E8C;
+  --sky:      #7FA3B5;
+  --text:     #2E221A;
+  --muted:    #8A7A6A;
+  --border:   #D8CCBE;
+  --white:    #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(251,247,242,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; flex-direction: column; }
+.nav-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--bark); letter-spacing: 1px;
+}
+.nav-sub {
+  font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--muted); margin-top: 1px;
+}
+.nav-cta {
+  background: var(--clay); color: var(--white);
+  padding: 10px 22px; border-radius: 6px;
+  font-size: 12px; font-weight: 500; letter-spacing: 1px;
+  text-decoration: none; text-transform: uppercase;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--clay-dk); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  padding-top: 68px;
+  background: var(--cream);
+}
+
+/* LEFT — story */
+.hero-story {
+  background: var(--linen);
+  padding: 80px 64px 80px 60px;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+/* big watermark letter */
+.hero-story::before {
+  content: 'F';
+  position: absolute; right: -30px; bottom: -40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 320px; font-weight: 600;
+  color: var(--sand); line-height: 1;
+  pointer-events: none; user-select: none;
+}
+
+.eyebrow {
+  font-size: 10px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--clay);
+  margin-bottom: 20px;
+}
+.hero-story h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 4.5vw, 60px);
+  font-weight: 400; line-height: 1.1;
+  color: var(--bark); margin-bottom: 24px;
+}
+.hero-story h1 em { font-style: italic; color: var(--clay); }
+.hero-story p {
+  font-size: 16px; color: var(--stone);
+  line-height: 1.8; max-width: 400px;
+  font-weight: 300; margin-bottom: 44px;
+}
+
+.stats {
+  display: flex; gap: 40px; flex-wrap: wrap;
+  position: relative; z-index: 1;
+}
+.stat-item { display: flex; flex-direction: column; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 400; color: var(--clay);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 11px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--muted);
+  margin-top: 5px;
+}
+
+/* RIGHT — form */
+.hero-form {
+  background: var(--white);
+  padding: 80px 48px;
+  display: flex; align-items: center;
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+}
+.form-wrap { width: 100%; }
+
+.form-badge {
+  display: inline-block;
+  background: #EDF4EC; color: var(--sage);
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 5px 12px;
+  border-radius: 20px; margin-bottom: 18px;
+  border: 1px solid #C8DBC9;
+}
+.form-wrap h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 400;
+  color: var(--bark); margin-bottom: 6px;
+}
+.form-desc {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.7; margin-bottom: 28px;
+}
+
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fg { margin-bottom: 16px; }
+label {
+  display: block;
+  font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--stone);
+  margin-bottom: 6px; font-weight: 500;
+}
+input, select, textarea {
+  width: 100%;
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 300;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  -webkit-appearance: none; appearance: none;
+}
+input::placeholder, textarea::placeholder { color: #C0B4A4; }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--clay);
+  box-shadow: 0 0 0 3px rgba(200,133,90,0.12);
+  background: var(--white);
+}
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C8855A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px; cursor: pointer;
+}
+select option { background: #fff; }
+textarea { resize: vertical; min-height: 88px; }
+
+.submit-btn {
+  width: 100%; padding: 15px;
+  background: var(--clay); border: none;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase;
+  border-radius: 8px; cursor: pointer;
+  transition: background .2s, transform .1s;
+  margin-top: 6px;
+}
+.submit-btn:hover { background: var(--clay-dk); }
+.submit-btn:active { transform: scale(0.99); }
+
+.form-note {
+  margin-top: 14px;
+  font-size: 11px; color: var(--muted);
+  text-align: center; line-height: 1.6;
+}
+
+/* SUCCESS */
+.success-wrap {
+  display: none;
+  text-align: center; padding: 32px 16px;
+}
+.success-circle {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: #EDF4EC; border: 2px solid var(--sage);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin: 0 auto 20px;
+}
+.success-wrap h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 400;
+  color: var(--bark); margin-bottom: 12px;
+}
+.success-wrap p {
+  font-size: 14px; color: var(--muted); line-height: 1.7;
+}
+.success-wrap a { color: var(--clay); text-decoration: none; }
+
+/* ── TESTIMONIALS ── */
+.testimonials {
+  background: var(--wood);
+  padding: 64px 60px;
+  display: flex; gap: 0;
+  overflow-x: auto;
+}
+.testi {
+  flex: 1; min-width: 260px;
+  padding: 0 40px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.testi:first-child { padding-left: 0; }
+.testi:last-child { border-right: none; }
+.testi-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px; color: var(--clay);
+  line-height: 0.8; margin-bottom: 12px;
+}
+.testi-text {
+  font-size: 14px; color: rgba(245,239,230,0.8);
+  line-height: 1.8; font-weight: 300;
+  font-style: italic; margin-bottom: 16px;
+}
+.testi-author {
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--clay);
+}
+
+/* ── PROCESS ── */
+.process-section {
+  background: var(--sand);
+  padding: 96px 60px;
+}
+.section-eye {
+  font-size: 10px; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--clay);
+  margin-bottom: 14px;
+}
+.process-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px; font-weight: 400;
+  color: var(--bark); margin-bottom: 56px;
+  max-width: 500px;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 32px;
+}
+.step {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s;
+}
+.step:hover { box-shadow: 0 8px 32px rgba(60,40,20,0.08); }
+.step-icon {
+  width: 44px; height: 44px;
+  background: var(--linen);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 18px;
+}
+.step h3 {
+  font-size: 15px; font-weight: 500;
+  color: var(--bark); margin-bottom: 10px;
+}
+.step p {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.7; font-weight: 300;
+}
+
+/* ── WHY FRAME ── */
+.why-section {
+  background: var(--linen);
+  padding: 96px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.why-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px; font-weight: 400;
+  color: var(--bark); line-height: 1.2;
+  margin-bottom: 20px;
+}
+.why-left h2 em { font-style: italic; color: var(--clay); }
+.why-left p {
+  font-size: 15px; color: var(--stone);
+  line-height: 1.9; font-weight: 300;
+}
+.why-right { display: flex; flex-direction: column; gap: 20px; }
+.why-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 20px 22px;
+  display: flex; gap: 16px; align-items: flex-start;
+  border: 1px solid var(--border);
+}
+.why-icon {
+  font-size: 22px; flex-shrink: 0; margin-top: 2px;
+}
+.why-card h4 {
+  font-size: 14px; font-weight: 500;
+  color: var(--bark); margin-bottom: 5px;
+}
+.why-card p {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.6; font-weight: 300;
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+  background: var(--bark);
+  padding: 96px 60px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200,133,90,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.final-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px; font-weight: 400;
+  color: var(--sand); margin-bottom: 14px;
+  position: relative;
+}
+.final-cta h2 em { font-style: italic; color: var(--clay); }
+.final-cta p {
+  font-size: 16px; color: rgba(245,239,230,0.6);
+  margin-bottom: 36px; font-weight: 300;
+  position: relative;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--clay); color: var(--white);
+  padding: 18px 48px; border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 500;
+  transition: background .2s;
+  position: relative;
+}
+.cta-btn:hover { background: var(--clay-dk); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bark);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 28px 60px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 400;
+  color: rgba(245,239,230,0.4); letter-spacing: 2px;
+}
+.footer-links {
+  font-size: 12px; color: rgba(245,239,230,0.4);
+  text-align: right; line-height: 1.8;
+}
+.footer-links a { color: var(--clay); text-decoration: none; }
+
+/* ── MOBILE ── */
+@media (max-width: 860px) {
+  nav { padding: 0 20px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-story { padding: 60px 24px 48px; }
+  .hero-form { padding: 48px 24px; border-left: none; border-top: 1px solid var(--border); }
+  .frow { grid-template-columns: 1fr; }
+  .testimonials { flex-direction: column; padding: 48px 24px; gap: 32px; }
+  .testi { padding: 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 32px; }
+  .testi:last-child { border-bottom: none; padding-bottom: 0; }
+  .process-section, .why-section, .final-cta, footer { padding: 64px 24px; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .why-section { grid-template-columns: 1fr; gap: 40px; }
+  .final-cta h2 { font-size: 34px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+  .footer-links { text-align: center; }
+}
+@media (max-width: 480px) {
+  .steps { grid-template-columns: 1fr; }
+  .stats { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-name">Frame</div>
+    <div class="nav-sub">Build &amp; Design · Newport Beach</div>
+  </div>
+  <a href="#consult" class="nav-cta">Free Consult</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+
+  <div class="hero-story">
+    <div class="eyebrow">Boutique General Contractor · Newport Beach, CA</div>
+    <h1>We build homes<br>people are <em>proud</em><br>to come home to.</h1>
+    <p>Custom builds, high-end remodels, and design-build projects across Newport Beach and Orange County. Boutique service. Transparent pricing. No surprises.</p>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Years building</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">200+</span>
+        <span class="stat-label">Projects done</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Licensed &amp; insured</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-form" id="consult">
+    <div class="form-wrap">
+
+      <div id="form-inner">
+        <div class="form-badge">✓ Free · No obligation · We respond in 2 hrs</div>
+        <h2>Schedule your free consultation</h2>
+        <p class="form-desc">Tell us about your project and we'll reach out within 2 hours to schedule a real conversation — no sales pressure, just honest answers.</p>
+
+        <form id="lead-form" onsubmit="handleSubmit(event)" novalidate>
+          <div class="frow">
+            <div class="fg">
+              <label for="fname">First name</label>
+              <input type="text" id="fname" placeholder="Sarah" required>
+            </div>
+            <div class="fg">
+              <label for="lname">Last name</label>
+              <input type="text" id="lname" placeholder="Johnson" required>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label for="phone">Best phone number</label>
+            <input type="tel" id="phone" placeholder="(949) 555-0100" required>
+          </div>
+
+          <div class="fg">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="sarah@email.com" required>
+          </div>
+
+          <div class="fg">
+            <label for="ptype">Project type</label>
+            <select id="ptype" required>
+              <option value="" disabled selected>What are you building?</option>
+              <option>Custom home — new build</option>
+              <option>Full home remodel</option>
+              <option>Kitchen remodel</option>
+              <option>Master bathroom</option>
+              <option>Home addition or ADU</option>
+              <option>Outdoor living / pool area</option>
+              <option>Commercial build-out</option>
+              <option>Not sure yet — need guidance</option>
+            </select>
+          </div>
+
+          <div class="frow">
+            <div class="fg">
+              <label for="budget">Budget range</label>
+              <select id="budget">
+                <option value="" disabled selected>Est. budget</option>
+                <option>Under $100K</option>
+                <option>$100K – $250K</option>
+                <option>$250K – $500K</option>
+                <option>$500K – $1M</option>
+                <option>Over $1M</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="timeline">Start date</label>
+              <select id="timeline">
+                <option value="" disabled selected>When to start</option>
+                <option>As soon as possible</option>
+                <option>1–3 months</option>
+                <option>3–6 months</option>
+                <option>6+ months out</option>
+                <option>Just planning for now</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label for="zip">Property zip code</label>
+            <input type="text" id="zip" placeholder="92660" maxlength="5" inputmode="numeric">
+          </div>
+
+          <div class="fg">
+            <label for="msg">Tell us about your vision <span style="color:#C0B4A4;font-size:9px">(optional)</span></label>
+            <textarea id="msg" placeholder="What do you want to create? Any ideas, inspiration, or concerns you already have…"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Request My Free Consultation →</button>
+        </form>
+
+        <p class="form-note">We never share your information. By submitting, you agree to be contacted by Frame Build &amp; Design.</p>
+      </div>
+
+      <div class="success-wrap" id="success-inner">
+        <div class="success-circle">✓</div>
+        <h3>You're on our list.</h3>
+        <p style="color:#8A9E8C;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px">Request received</p>
+        <p>Someone from our team will call or text you within 2 hours. We've reviewed your project details and will come prepared with real questions — not a sales deck.<br><br>Follow our work: <a href="https://instagram.com/framebuilddesign" target="_blank">@framebuilddesign</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+  <div class="testi">
+    <div class="testi-quote">"</div>
+    <p class="testi-text">Frame delivered our Newport Beach remodel on time and under budget. The craftsmanship is something we show off every single day.</p>
+    <div class="testi-author">Michael T. — Corona del Mar</div>
+  </div>
+  <div class="testi">
+    <div class="testi-quote">"</div>
+    <p class="testi-text">We'd interviewed four contractors. Frame was the only team that actually listened to what we wanted instead of telling us what to want.</p>
+    <div class="testi-author">Jennifer &amp; Mark R. — Newport Coast</div>
+  </div>
+  <div class="testi">
+    <div class="testi-quote">"</div>
+    <p class="testi-text">From the first call to move-in day the communication was exceptional. I never had to wonder what was happening on my job site.</p>
+    <div class="testi-author">David L. — Laguna Beach</div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="section-eye">How it works</div>
+  <h2>From first call to finished home.</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">☎️</div>
+      <h3>Free consultation</h3>
+      <p>We meet at your property or on a call. You share your vision — we give honest feedback on scope, timeline, and real cost.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">📐</div>
+      <h3>Design &amp; fixed estimate</h3>
+      <p>We develop a detailed proposal with fixed pricing. No hidden fees, no surprise change orders. You know the number before we break ground.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">🏗️</div>
+      <h3>Permits &amp; build</h3>
+      <p>We handle every permit, subcontractor, and inspection. Weekly photo updates and a dedicated project manager — always reachable.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">🔑</div>
+      <h3>Final walkthrough</h3>
+      <p>We don't call a project done until you're satisfied. Every punch-list item resolved before we hand you the keys.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY FRAME -->
+<section class="why-section">
+  <div class="why-left">
+    <h2>Why Newport Beach homeowners choose <em>Frame.</em></h2>
+    <p>We're not a volume contractor. We take on a limited number of projects each quarter so every client gets our full attention, our best crew, and a result we're genuinely proud to put our name on.</p>
+  </div>
+  <div class="why-right">
+    <div class="why-card">
+      <div class="why-icon">🔒</div>
+      <div>
+        <h4>Fixed-price contracts</h4>
+        <p>The price we quote is the price you pay. We build in the contingencies upfront so there are no surprises mid-project.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📅</div>
+      <div>
+        <h4>On-time delivery, guaranteed</h4>
+        <p>We set a move-in date and we hit it. Our project manager tracks every trade, every delivery, every inspection.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📲</div>
+      <div>
+        <h4>Full transparency, always</h4>
+        <p>Weekly photo updates, real-time cost tracking, and a project manager who answers the phone. You're never left wondering.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏅</div>
+      <div>
+        <h4>15+ years in Orange County</h4>
+        <p>We know the local permit offices, the best subcontractors, and the materials that hold up in coastal climates. That expertise saves you time and money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Ready to build<br><em>something great?</em></h2>
+  <p>Free consultations. No pressure. Real answers about your project.</p>
+  <a href="#consult" class="cta-btn">Schedule My Free Consultation →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Frame Build &amp; Design</div>
+  <div class="footer-links">
+    Newport Beach, CA &nbsp;·&nbsp; <a href="mailto:office@framebd.com">office@framebd.com</a><br>
+    Licensed General Contractor &nbsp;·&nbsp; <a href="https://instagram.com/framebuilddesign" target="_blank">@framebuilddesign</a>
+  </div>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const req = ['fname','lname','phone','email','ptype'];
+    let ok = true;
+    req.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) { el.focus(); ok = false; }
+    });
+    if (!ok) return;
+    document.getElementById('form-inner').style.display = 'none';
+    const s = document.getElementById('success-inner');
+    s.style.display = 'block';
+    s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  document.getElementById('phone').addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g,'');
+    if (v.length >= 10) v = '('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6,10);
+    else if (v.length >= 6) v = '('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
+    else if (v.length >= 3) v = '('+v.slice(0,3)+') '+v.slice(3);
+    e.target.value = v;
+  });
+
+  document.getElementById('zip').addEventListener('input', function(e) {
+    e.target.value = e.target.value.replace(/\D/g,'').slice(0,5);
+  });
+</script>
+</body>
+</html>
